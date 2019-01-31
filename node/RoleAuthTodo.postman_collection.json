@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "e16b7312-0287-483e-bd1f-4c4c0ea03a67",
+		"name": "RoleAuthTodo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "werapan3@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "creator",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "reader",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "roles",
+							"value": "editor",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "werapan@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AuthProtect",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzI3MzhiODFkYmY0ZDMzMjQ4ZmI1YmQiLCJlbWFpbCI6IndlcmFwYW5AZ21haWwuY29tIiwicm9sZXMiOlsiY3JlYXRvciIsInJlYWRlciIsImVkaXRvciJdLCJpYXQiOjE1NDYwNzQzMjUsImV4cCI6MTU0NjA4NDQwNX0.KhfdgqH4qcCg6lQ3iRtsbNXArYvl2z24pG10wxIGgyQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "werapan@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/protected",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTodo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzI3M2RjNTY3MWI0YjNhMjA3N2FkZGYiLCJlbWFpbCI6IndlcmFwYW4zQGdtYWlsLmNvbSIsInJvbGVzIjpbImNyZWF0b3IiXSwiaWF0IjoxNTQ2MDc1NTg5LCJleHAiOjE1NDYwODU2Njl9.FC3rnDZb-qo7-uSZ7Vr9b0c9UUqKuTWnKCtQX3CUoiw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTodoByReader",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzI3MmNkNWY0ZjI2ZTRhNzRlZjAyMGYiLCJlbWFpbCI6IndlcmFwYW5AZ21haWwuY29tIiwicm9sZXMiOlsiZWRpdG9yIl0sImlhdCI6MTU0NjA3MTM0MCwiZXhwIjoxNTQ2MDgxNDIwfQ.qPlDMtRIw_5PrLIFiM7YdUswria4SGFvA6Yu8WVoMhA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "ทดสอบ"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "express.mongo.role",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "nodemon app/server.js --exec babel-node --legacy-watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ilovea3play:intel266@gitlab.com/ilovea3play/express.mongo.role.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ilovea3play/express.mongo.role/issues"
+  },
+  "homepage": "https://gitlab.com/ilovea3play/express.mongo.role#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "joi-browser": "^13.4.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.1",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-stage-2": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
+    "eslint": "^5.11.1",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.9"
+  }
+}
